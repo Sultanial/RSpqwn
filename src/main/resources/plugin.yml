@@ -1,0 +1,11 @@
+name: RSpawn
+version: '${project.version}'
+main: assequilent.rspawn.RSpawn
+api-version: '1.16'
+commands:
+  rspawn:
+    aliases:
+      spawn
+  rsetspawn:
+    aliases:
+      setspawn

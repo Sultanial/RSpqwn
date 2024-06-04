@@ -1,0 +1,64 @@
+# ____  _                ____  _             _ _
+#|  _ \(_)_   _____ _ __/ ___|| |_ _   _  __| (_) ___
+#| |_) | \ \ / / _ \ '__\___ \| __| | | |/ _` | |/ _ \
+#|  _ <| |\ V /  __/ |   ___) | |_| |_| | (_| | | (_) |
+#|_| \_\_| \_/ \___|_|  |____/ \__|\__,_|\__,_|_|\___/
+
+#plugin by assequilent
+#plugin`s sponsor: https://www.mcriver.ru
+
+#Доступные плейсхолдеры:
+#    $current-version - Версия плагина, которая стоит на сервере
+#    $latest-version - Версия плагина, которая стоит на spigotmc
+#    $download-link - Ссылка на скачивание плагина
+#    $target - Ник таргета
+#    $new-line - Переход на новую строку (Только для plugin-outdate, plugin-latest-version, spectate)
+#    $label - Команда, которую ввёл игрок
+
+messages:
+  player:
+    no-permission: '{Prefix} &cУ вас нет прав!'
+    teleported: '{Prefix} &aВы были телепортированы на спавн!'
+    teleported-by-admin: '{Prefix} &cВы были телепортированы на спавн администратором!'
+    spawn-not-set: '{Prefix} &cТочка спавна не установлена, пожалуйста, сообщите администрации!'
+  admin:
+    spawn-not-set: '{Prefix} &cТочка спавна не установлена, установите её командой &x&F&F&0&0&5&3/setspawn!'
+    teleported-player: '{Prefix} &aВы успешно телепортировали игрока &x&F&F&0&0&5&3$target &aна спавн!'
+    target-is-offline: '{Prefix} &cИгрок офлайн!'
+    target-not-found: '{Prefix} &cИгрок не найден!'
+    use-commands:
+      set-spawn: '{Prefix} &cИспользование команды: &x&F&F&0&0&5&3/$label &8➥ &fУстановить точку спавна'
+      spawn-teleport: '{Prefix} &cИспользование команды: &x&F&F&0&0&5&3/$label teleport|tp [Ник] &8➥ &fТелепортировать игрока на спавн'
+      help: '$new-line{Prefix} &x&F&F&0&0&5&3&lСпавн$new-line
+      &r    &x&F&F&0&0&5&3/spawn help &8➥ &fВывести этот список$new-line
+      &r    &x&F&F&0&0&5&3/spawn &8➥ &fТелепортироваться на спавн$new-line
+      &r    &x&F&F&0&0&5&3/$label teleport|tp [Ник] &8➥ &fТелепортировать игрока на спавн$new-line
+      &r    &x&F&F&0&0&5&3/setspawn &8➥ &fУстановить точку спавна$new-line&r'
+    spawn-point-created: '{Prefix} &aВы успешно установили точку спавна!'
+    plugin-outdate: '{Prefix} &fУ плагина &x&F&F&0&0&5&3&lRSpawn &fвышло обновление! &8(current ver: $current-version, latest ver: $latest-version)$new-line{Prefix} &fСкачать обновление&8: &x&F&F&0&0&5&3&l&n$download-link'
+    plugin-latest-version: '{Prefix} &aУ плагина &x&F&F&0&0&5&3&lRSpawn &aновейшая версия! &8(ver: $latest-version)'
+  console:
+    plugin-outdate: '&aУ этого плагина вышло обновление!$new-line&fСкачать обновление&8: &x&F&F&0&0&5&3$download-link'
+    plugin-latest-version: '&aУ этого плагина новейшая версия! &8(ver: $latest-version)'
+    plugin-started: '&aПлагин успешно запущен!'
+    plugin-disabled: '&cПлагин выключен!'
+    cannot-run-as-console: '&cЭту команду нельзя использовать от имени консоли!'
+  other:
+    use-commands:
+      spawn: '{Prefix} {Prefix} &cИспользование команды: &x&F&F&0&0&5&3/$label &8➥ &fТелепортироваться на спавн'
+    plugin-restarted: '{Prefix} &aВы успешно перезагрузили конфиг!'
+
+options:
+  #unset - Значит, что переменная пустая. Поставьте свое значение этим переменным, или пропишите команду /rsetspawn на сервере.
+  spawn:
+    world: world
+    x: unset
+    y: unset
+    z: unset
+    yaw: unset
+    pitch: unset
+  teleport-when-joined: true #Телепортировать ли игрока на спавн когда он зашел на режим?
+  prefix: '&x&F&F&4&2&9&E&lR&x&F&F&3&7&9&2&li&x&F&F&2&C&8&5&lv&x&F&F&2&1&7&9&le&x&F&F&1&6&6&C&lr&x&F&F&0&B&6&0&lM&x&F&F&0&0&5&3&lC &x&5&D&5&D&5&D&l➴'
+  check-update: true
+  permissions:
+    admin: 'river.spawn.admin'
